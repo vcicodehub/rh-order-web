@@ -1,0 +1,24 @@
+<mat-sidenav-container class="app-sidenav-container">
+    <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10"
+                 opened="true"
+                 mode="side">
+      <mat-toolbar routerLink="./" color="primary">
+        <mat-icon aria-hidden="false" aria-label="Supplies">home</mat-icon>
+        <span class="pad-icon">Signet</span>
+      </mat-toolbar>
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <mat-icon aria-hidden="false" aria-label="Request">list_alt</mat-icon>
+          <a routerLink="./soms"><span class="pad-icon">Orders</span></a>
+        </mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+  
+    <div class="app-sidenav-content">
+      <app-toolbar></app-toolbar>
+      <div class="wrapper">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  
+  </mat-sidenav-container>

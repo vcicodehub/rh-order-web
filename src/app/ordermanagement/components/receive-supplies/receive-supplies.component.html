@@ -1,0 +1,11 @@
+<h1>Receive Supplies</h1>
+<button mat-raised-button (click)="pushOrder()">Push Order</button>
+<br><br>
+<mat-card>
+  <mat-list>
+    <mat-list-item *ngFor="let order of list | async">
+      {{order.shop.name}} - {{order.id}} - {{order.number}}
+    </mat-list-item>
+    <!-- <button mat-raised-button (click)="removeOrder(order)">del</button> -->
+  </mat-list>
+</mat-card>
