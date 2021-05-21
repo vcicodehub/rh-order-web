@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 import { Order } from '../models/order';
+import { AppConfigService } from './app-config.service';
 
 @Injectable({ providedIn: 'root' })
 export class OrderStoreService {
@@ -17,8 +18,9 @@ export class OrderStoreService {
   // Exposed observable (read-only).
   readonly orders$ = this._ordersSource.asObservable();
 
-  constructor(private http: HttpClient) {
-    this.http.post<Order[]>('/signet/api/v1/order/search', {})
+  constructor(private http: HttpClient, private config: AppConfigService) {
+    config.loadAppConfig();
+    this.http.post<Order[]>('https://nbac0j9n23.execute-api.us-east-2.amazonaws.com/dev/signet/api/v1/vendors/search', {})
       .subscribe(orders => this._ordersSource.next(orders));
   }
 

@@ -1,11 +1,20 @@
 <h1>Receive Supplies</h1>
-<button mat-raised-button (click)="pushOrder()">Push Order</button>
+<button mat-raised-button (click)="pushVendor()">New Vendor</button>
 <br><br>
-<mat-card>
-  <mat-list>
-    <mat-list-item *ngFor="let order of list | async">
-      {{order.shop.name}} - {{order.id}} - {{order.number}}
-    </mat-list-item>
-    <!-- <button mat-raised-button (click)="removeOrder(order)">del</button> -->
-  </mat-list>
-</mat-card>
+<div *ngFor="let vendor of list | async">
+  <mat-card>
+    <mat-car-header>
+      <mat-card-title>{{vendor.name}}</mat-card-title>
+      <mat-card-subtitle>{{vendor.number}}</mat-card-subtitle>
+    </mat-car-header>
+    <mat-card-content>
+      {{vendor.address.line1}}<br>
+      {{vendor.address.city}}, {{vendor.address.state}} {{vendor.address.zip}}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>EDIT</button>
+      <button mat-button>DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+  <br>
+</div>

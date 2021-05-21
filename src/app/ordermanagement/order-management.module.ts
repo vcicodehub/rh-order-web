@@ -14,6 +14,7 @@ import { ReceiveSuppliesComponent } from './components/receive-supplies/receive-
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { OrderStoreService } from './services/order-store.service';
+import { VendorStoreService } from './services/vendor-store.service';
 
 const routes: Routes = [
   { path: '', component: OrderManagementAppComponent,
@@ -46,7 +47,8 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   providers: [
-    OrderStoreService
+    OrderStoreService,
+    VendorStoreService
   ]
 })
-export class ContactmanagerModule { }
+export class OrderManagementModule { }

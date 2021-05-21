@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent,
     children: [
         { path: '', component: WelcomeComponent },
-        { path: 'soms', loadChildren: () => import('../ordermanagement/ordermanagement.module').then(m => m.ContactmanagerModule) },
+        { path: 'soms', loadChildren: () => import('../ordermanagement/order-management.module').then(m => m.OrderManagementModule) },
         { path: '**', redirectTo: '' }
     ]
   },

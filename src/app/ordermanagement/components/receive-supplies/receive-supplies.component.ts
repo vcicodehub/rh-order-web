@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Order } from '../../models/order';
-import { OrderStoreService } from '../../services/order-store.service';
+import { Vendor } from '../../models/vendor';
+import { VendorStoreService } from '../../services/vendor-store.service';
 
 @Component({
   selector: 'app-receive-supplies',
@@ -10,20 +10,30 @@ import { OrderStoreService } from '../../services/order-store.service';
 })
 export class ReceiveSuppliesComponent implements OnInit {
 
-  list: Observable<Order[]>;
+  list: Observable<Vendor[]>;
   
-  constructor(private orderStoreService: OrderStoreService) {
+  constructor(private vendorStoreService: VendorStoreService) {
   }
 
   ngOnInit(): void {
-    this.list = this.orderStoreService.orders$;
+    this.list = this.vendorStoreService.vendors$;
   }
 
-  pushOrder() {
-    this.orderStoreService.addOrder({ id: '12345', number: 'R234985'});
+  pushVendor() {
+    this.vendorStoreService.addVendor({ 
+      id: '99999', 
+      number: '112233-777', 
+      name: 'NEW VENDOR',
+      address: {
+        line1: "777 Excitement Dr",
+        city: "Groovy",
+        state: "CA",
+        zip: 10077
+      }
+    });
   }
 
-  removeOrder(order: Order) {
-    this.orderStoreService.removeOrder(order);
+  removeVendor(vendor: Vendor) {
+    this.vendorStoreService.removeVendor(vendor);
   }
 }
