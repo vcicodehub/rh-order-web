@@ -10,4 +10,9 @@ phases:
       - npm run build-prod
   post_build:
     commands:
-      - aws s3 sync ./dist/rh-web s3://om-order-app --acl 'public-read' --delete
+      #- aws s3 sync ./dist/rh-web s3://om-order-app --acl 'public-read' --delete
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: dist/rh-web      
