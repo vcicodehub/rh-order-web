@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { ConstantPool } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -19,9 +20,11 @@ export class VendorStoreService {
   readonly vendors$ = this._vendorsSource.asObservable();
 
   constructor(private http: HttpClient, private config: AppConfigService) {
-    this.config.loadAppConfig();
-    this.http.post<Vendor[]>('https://nbac0j9n23.execute-api.us-east-2.amazonaws.com/dev/signet/api/v1/om/vendors/search', {})
-      .subscribe(vendors => this._vendorsSource.next(vendors));
+    this.http.post<Vendor[]>(config.getHost() + '/signet/api/v1/om/vendors/search', {})
+      .subscribe(vendors => {
+        console.log('Loaded ' + vendors.length + ' vendors');
+        this._vendorsSource.next(vendors);
+      });
   }
 
   // Get last value without subscribing to the orders$ observable (synchronously).

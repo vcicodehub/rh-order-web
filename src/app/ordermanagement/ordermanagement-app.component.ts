@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppConfigService } from './services/app-config.service';
 
 @Component({
   selector: 'app-order-management',
@@ -10,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderManagementAppComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appConfig: AppConfigService) { }
 
   ngOnInit(): void {
+    this.appConfig.loadAppConfig();
   }
 
 }

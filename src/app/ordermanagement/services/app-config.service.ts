@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AppConfigService {
-  private appConfig;
+  private _appConfig;
+  private _host;
 
   constructor(private http: HttpClient) { }
 
@@ -13,12 +14,14 @@ export class AppConfigService {
     return this.http.get('/assets/appConfig.json')
       .toPromise()
       .then(data => {
-        this.appConfig = data;
-        console.log('Loaded config: ', this.appConfig);
+        this._appConfig = data;
+        //this._host = this._appConfig["api-gateway-host"];
+        this._host = this._appConfig["elb-host"];
+        console.log('Loaded config: ', this._appConfig);
       });
   }
   
-  getConfig() {
-    return this.appConfig;
+  getHost() {
+    return this._host;
   }
 }

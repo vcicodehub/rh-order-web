@@ -1,8 +1,0 @@
-{
-    "/signet/api/*": {
-        "target": "https://nbac0j9n23.execute-api.us-east-2.amazonaws.com",
-        "secure": true,
-        "logLevel": "debug",
-        "changeOrigin" : true
-    }
-}
