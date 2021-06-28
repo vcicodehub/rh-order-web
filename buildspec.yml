@@ -11,8 +11,10 @@ phases:
   post_build:
     commands:
       #- aws s3 sync ./dist/rh-web s3://om-order-app --acl 'public-read' --delete
+  post_build:
+    commands:
+      - docker push $ECR_REPO/om-order-web:latest
+      - printf '[{"name":"%s","imageUri":"%s"}]' "om-service-container" "$ECR_REPO/om-order-web:latest" > imagedefinitions.json
+      - ls -la
 artifacts:
-  files:
-    - "**/*"
-  discard-paths: no
-  base-directory: dist/rh-web      
+  files: imagedefinitions.json
