@@ -4,6 +4,7 @@ phases:
     commands:
       - echo Installing the npm modules for the Angular project...
       - npm install
+      - ECR_REPO=415353467794.dkr.ecr.us-east-2.amazonaws.com
   build:
     commands:
       - echo Build the Angular app...
@@ -11,8 +12,6 @@ phases:
   post_build:
     commands:
       #- aws s3 sync ./dist/rh-web s3://om-order-app --acl 'public-read' --delete
-  post_build:
-    commands:
       - docker push $ECR_REPO/om-order-web:latest
       - printf '[{"name":"%s","imageUri":"%s"}]' "om-service-container" "$ECR_REPO/om-order-web:latest" > imagedefinitions.json
       - ls -la
