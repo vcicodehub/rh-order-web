@@ -1,4 +1,4 @@
 {
-    "api-gateway-host" : "https://nbac0j9n23.execute-api.us-east-2.amazonaws.com/dev",
-    "elb-host" : "http://om-ne-publi-1fhj2y0z3kqkh-1340132511.us-east-2.elb.amazonaws.com"
+    "api-gateway-host" : "https://gam556dtcj.execute-api.us-east-2.amazonaws.com/Dev",
+    "elb-host" : "http://om-ne-Publi-1FHJ2Y0Z3KQKH-1340132511.us-east-2.elb.amazonaws.com"
 }

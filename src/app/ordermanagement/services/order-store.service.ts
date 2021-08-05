@@ -20,7 +20,7 @@ export class OrderStoreService {
 
   constructor(private http: HttpClient, private config: AppConfigService) {
     config.loadAppConfig();
-    this.http.post<Order[]>('https://nbac0j9n23.execute-api.us-east-2.amazonaws.com/dev/signet/api/v1/vendors/search', {})
+    this.http.post<Order[]>(config.getHost() + '/api/v1/vendors/search', {})
       .subscribe(orders => this._ordersSource.next(orders));
   }
 

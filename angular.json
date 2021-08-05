@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rh-web": {
+    "rmm-web": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rh-web",
+            "outputPath": "dist/rmm-web",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,19 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rh-web:build",
-            "proxyConfig": "src/proxy.conf.json"
+            "browserTarget": "rmm-web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rh-web:build:production"
+              "browserTarget": "rmm-web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rh-web:build"
+            "browserTarget": "rmm-web:build"
           }
         },
         "test": {
@@ -113,16 +112,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "rh-web:serve"
+            "devServerTarget": "rmm-web:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "rh-web:serve:production"
+              "devServerTarget": "rmm-web:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "rh-web"
+  "defaultProject": "rmm-web"
 }

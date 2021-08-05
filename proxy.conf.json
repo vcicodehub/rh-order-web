@@ -1,7 +1,7 @@
 {
     "/signet": {
-        "target": "http://om-ne-Publi-16QR4M6H9F7QZ-1124862142.us-east-2.elb.amazonaws.com",
-        "secure": false,
+        "target": "http://om-ne-publi-1fhj2y0z3kqkh-1340132511.us-east-2.elb.amazonaws.com/",
+        "secure": true,
         "logLevel": "debug",
         "changeOrigin" : true
     }
