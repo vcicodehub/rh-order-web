@@ -14,11 +14,10 @@
       
           <mat-list role="list">
             <mat-list-item role="listitem">
-              <mat-icon aria-hidden="false" aria-label="Request">reorder</mat-icon>
+              <!-- <mat-icon aria-hidden="false" aria-label="Request">reorder</mat-icon> -->
               <a routerLink="./request-supplies"><span class="pad-icon">Request Supplies</span></a>
             </mat-list-item>
             <mat-list-item role="listitem">
-              <mat-icon aria-hidden="false" aria-label="Request">reorder</mat-icon>
               <a routerLink="./receive-supplies"><span class="pad-icon">Receive Supplies</span></a>
             </mat-list-item>
           </mat-list>
@@ -31,8 +30,19 @@
       
           <mat-list role="list">
             <mat-list-item role="listitem">
-              <mat-icon aria-hidden="false" aria-label="Request">inventory</mat-icon>
               <a routerLink="./inventory"><span class="pad-icon">Inventory</span></a>
+            </mat-list-item>
+          </mat-list>
+    
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title><b>Reports</b></mat-panel-title>
+          </mat-expansion-panel-header>
+      
+          <mat-list role="list">
+            <mat-list-item role="listitem">
+              <a routerLink="./inventory"><span class="pad-icon">Report One</span></a>
             </mat-list-item>
           </mat-list>
     

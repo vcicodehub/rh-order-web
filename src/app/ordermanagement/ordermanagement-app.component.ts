@@ -3,11 +3,8 @@ import { AppConfigService } from './services/app-config.service';
 
 @Component({
   selector: 'app-order-management',
-  template: `
-    <order-side-nav></order-side-nav>
-  `,
-  styles: [
-  ]
+  templateUrl: 'ordermanagement-app.component.html',
+  styleUrls: ['./ordermanagement-app.component.css']
 })
 export class OrderManagementAppComponent implements OnInit {
 

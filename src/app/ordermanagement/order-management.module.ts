@@ -12,7 +12,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RequestSuppliesComponent } from './components/request-supplies/request-supplies.component';
 import { ReceiveSuppliesComponent } from './components/receive-supplies/receive-supplies.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
-import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { OrderStoreService } from './services/order-store.service';
 import { VendorStoreService } from './services/vendor-store.service';
 
@@ -35,8 +34,7 @@ const routes: Routes = [
     DashboardComponent, 
     RequestSuppliesComponent,
     ReceiveSuppliesComponent,
-    InventoryComponent,
-    SideNavComponent
+    InventoryComponent
   ],
   imports: [
     CommonModule,

@@ -68,7 +68,7 @@
           "options": {
             "browserTarget": "rmm-web:build",
             "extraWebpackConfig": "webpack.config.js",
-            "port": 5000
+            "port": 5010
           },
           "configurations": {
             "production": {
