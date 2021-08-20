@@ -1,6 +1,6 @@
 {
-    "api-gateway-host-remote" : "https://gam556dtcj.execute-api.us-east-2.amazonaws.com/Dev",
-    "elb-host-remote" : "http://om-ne-Publi-1FHJ2Y0Z3KQKH-1340132511.us-east-2.elb.amazonaws.com",
-    "api-gateway-host" : "https://localhost",
-    "elb-host" : "http://localhost"
+    "api-gateway-host" : "https://gam556dtcj.execute-api.us-east-2.amazonaws.com/Dev",
+    "elb-host" : "http://om-ne-Publi-1FHJ2Y0Z3KQKH-1340132511.us-east-2.elb.amazonaws.com",
+    "api-gateway-host-local" : "https://localhost:8080",
+    "elb-host-local" : "http://localhost:8080"
 }
